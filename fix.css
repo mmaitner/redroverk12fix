@@ -1,0 +1,4 @@
+html, body, #redrover-kiosk, * {
+  touch-action: manipulation !important;
+  overscroll-behavior: none !important;
+}
