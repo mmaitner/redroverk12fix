@@ -1,0 +1,6 @@
+<?xml class='1.0' encoding='UTF-8'?>
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='llhpcmmbfbmhneofbneegonlahgpoenp'>
+    <updatecheck codebase='https://mmaitner.github.io/redroverk12fix/redroverk12.crx' version='1.0' />
+  </app>
+</gupdate>
