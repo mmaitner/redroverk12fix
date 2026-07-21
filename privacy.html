@@ -1,7 +1,308 @@
 <!DOCTYPE html>
-<html>
-<head><title>Privacy Policy</title></head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Red Rover Kiosk Touch Fix</title>
+<meta name="description" content="Privacy policy for the Red Rover Kiosk Touch Fix Chrome extension. The extension collects no data of any kind.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #16202b;
+    --ink-soft:   #56636f;
+    --ink-faint:  #8a949e;
+    --paper:      #ffffff;
+    --page:       #f4f5f3;
+    --panel:      #eef1f0;
+    --rule:       #dbe0e0;
+    --rule-soft:  #e8ebea;
+    --crimson:    #a32620;
+    --crimson-dk: #7f1c17;
+
+    --sans:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --mono:  "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.66;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .sheet {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-left: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    min-height: 100vh;
+  }
+
+  /* Letterhead */
+  .topbar { height: 4px; background: var(--crimson); }
+
+  header {
+    padding: 46px 56px 34px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 26px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 36px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .meta div { white-space: nowrap; }
+  .meta .k { color: var(--ink-faint); }
+  .meta .v { color: var(--ink); }
+
+  /* At-a-glance spec panel */
+  .panel {
+    margin: 34px 56px 8px;
+    border: 1px solid var(--rule);
+    background: var(--panel);
+  }
+  .panel-head {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .spec-val {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink);
+    text-align: right;
+  }
+  .spec-val.none {
+    color: var(--crimson-dk);
+    font-weight: 500;
+  }
+
+  /* Body sections */
+  main { padding: 30px 56px 8px; }
+
+  section { margin-bottom: 30px; }
+
+  h2 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 12px;
+    padding-bottom: 0;
+  }
+  h2 .sec {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--crimson);
+    margin-right: 12px;
+  }
+
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  a { color: var(--crimson-dk); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--crimson); }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    background: var(--panel);
+    border: 1px solid var(--rule-soft);
+    border-radius: 3px;
+    padding: 1px 5px;
+    color: var(--ink);
+  }
+
+  strong { font-weight: 600; color: var(--ink); }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  li:last-child { margin-bottom: 0; }
+
+  footer {
+    padding: 26px 56px 44px;
+    border-top: 1px solid var(--rule);
+    margin-top: 12px;
+  }
+  footer p {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    header { padding: 34px 24px 26px; }
+    h1 { font-size: 27px; }
+    .panel { margin: 26px 24px 8px; }
+    main { padding: 26px 24px 4px; }
+    footer { padding: 22px 24px 36px; }
+    .spec-row { flex-direction: column; gap: 4px; }
+    .spec-val { text-align: left; }
+  }
+
+  .fade { opacity: 0; transform: translateY(6px); animation: rise .5s ease forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .fade { animation: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
 <body>
-  <p>The Red Rover Touch Fix extension does not collect, store, or transmit any personal data or user information.</p>
+  <div class="sheet fade">
+    <div class="topbar"></div>
+
+    <header>
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>Red Rover Kiosk Touch Fix</h1>
+      <p class="subtitle">Chrome Extension &middot; Privacy Statement</p>
+      <div class="meta">
+        <div><span class="k">Effective</span> &nbsp;<span class="v">July 21, 2026</span></div>
+        <div><span class="k">Version</span> &nbsp;<span class="v">1.0</span></div>
+        <div><span class="k">Publisher</span> &nbsp;<span class="v">Mark Maitner</span></div>
+      </div>
+    </header>
+
+    <div class="panel">
+      <div class="panel-head">Data Handling at a Glance</div>
+      <div class="spec-row">
+        <span class="spec-label">Personal data collected</span>
+        <span class="spec-val none">None</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Data stored or transmitted</span>
+        <span class="spec-val none">None</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Network requests made</span>
+        <span class="spec-val none">None</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Cookies, tracking, analytics</span>
+        <span class="spec-val none">None</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-label">Site access</span>
+        <span class="spec-val">kiosk.redroverk12.com</span>
+      </div>
+    </div>
+
+    <main>
+      <section>
+        <h2><span class="sec">§1</span>Overview</h2>
+        <p>Red Rover Kiosk Touch Fix is a small utility extension that improves how the Red Rover kiosk page behaves on touchscreens. It disables accidental text selection and long-press menus and makes taps register reliably, so the kiosk responds cleanly to touch.</p>
+        <p>The extension does not collect, store, or transmit any personal data or user information. This policy explains exactly what the extension does and does not do with your information.</p>
+      </section>
+
+      <section>
+        <h2><span class="sec">§2</span>Information we collect</h2>
+        <p>None. The extension collects no personal information, no usage data, and no device information. It does not use cookies, does not include analytics or tracking, and does not contain advertising.</p>
+      </section>
+
+      <section>
+        <h2><span class="sec">§3</span>How the extension works</h2>
+        <p>The extension runs only on pages under <code>https://kiosk.redroverk12.com/*</code>. On those pages it loads a stylesheet and a small script that adjust how the page responds to touch:</p>
+        <ul>
+          <li><strong>Styling (CSS)</strong> disables text selection and touch callouts and normalizes scroll and touch behavior.</li>
+          <li><strong>Script (JavaScript)</strong> blocks the browser's text-selection and context-menu popups (such as the ChromeOS &ldquo;Copy | Select all&rdquo; menu) and, when you lift your finger, triggers the click on the button or element you tapped so the kiosk responds reliably to touch.</li>
+        </ul>
+        <p>Both the stylesheet and the script run entirely inside your browser on that page. They read no personal information and send nothing anywhere.</p>
+      </section>
+
+      <section>
+        <h2><span class="sec">§4</span>Permissions</h2>
+        <p>The extension requests no special permissions. It only registers a content script scoped to the Red Rover kiosk domain, which is required to apply its touch fixes there. It has no access to any other website, to your browsing history, or to your files.</p>
+      </section>
+
+      <section>
+        <h2><span class="sec">§5</span>Third-party services</h2>
+        <p>The extension uses no third-party services, servers, or APIs. It shares no data with anyone, because it holds no data to share.</p>
+      </section>
+
+      <section>
+        <h2><span class="sec">§6</span>Children's privacy</h2>
+        <p>Red Rover kiosks are used in K&ndash;12 school settings. The extension collects no information from any user, including children under 13, and is therefore consistent with the U.S. Children's Online Privacy Protection Act (COPPA) and similar rules. Because nothing is collected, nothing about a child (or any user) is ever gathered, stored, or shared.</p>
+      </section>
+
+      <section>
+        <h2><span class="sec">§7</span>Changes to this policy</h2>
+        <p>If this extension's behavior ever changes in a way that affects privacy, this page will be updated and the effective date above will be revised. Continued use of the extension after an update means you accept the revised policy.</p>
+      </section>
+
+      <section>
+        <h2><span class="sec">§8</span>Contact</h2>
+        <p>Questions about this policy can be directed to the developer at <a href="mailto:allied10@gmail.com">allied10@gmail.com</a>, or by opening an issue at <a href="https://github.com/mmaitner/redroverk12fix" target="_blank" rel="noopener">github.com/mmaitner/redroverk12fix</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Red Rover Kiosk Touch Fix. This extension is an independent utility and is not affiliated with, endorsed by, or sponsored by Red Rover.</p>
+    </footer>
+  </div>
 </body>
 </html>
