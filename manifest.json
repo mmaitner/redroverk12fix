@@ -1,10 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Red Rover Touch Fix",
+  "name": "Red Rover Kiosk Touch Fix",
   "version": "1.0",
+  "description": "Fixes long-press touch cancellation on ChromeOS kiosks.",
   "content_scripts": [
     {
       "matches": ["https://kiosk.redroverk12.com/*"],
+      "js": ["fix.js"],
       "css": ["fix.css"],
       "run_at": "document_start"
     }
