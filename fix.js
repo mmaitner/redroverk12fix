@@ -1,17 +1,23 @@
-// Add styles to stop selection and touch conflicts
-const style = document.createElement('style');
-style.innerHTML = `
-  *, body, button, div, span {
-    -webkit-user-select: none !important;
-    user-select: none !important;
-    -webkit-touch-callout: none !important;
-    touch-action: manipulation !important;
-    overscroll-behavior: none !important;
+// Prevent context menu and text selection triggers
+document.addEventListener('selectstart', e => e.preventDefault(), true);
+document.addEventListener('contextmenu', e => e.preventDefault(), true);
+
+let activeTarget = null;
+
+// Intercept touchstart non-passively to block ChromeOS 'Copy | Select all' popups
+window.addEventListener('touchstart', e => {
+  let target = e.target.closest('button, div, span, input') || e.target;
+  if (target) {
+    e.preventDefault();
+    activeTarget = target;
   }
-`;
-document.head.appendChild(style);
+}, { capture: true, passive: false });
 
-// Block context menu popups on long press
-document.addEventListener('contextmenu', e => e.preventDefault(), false);
-
-console.log('Kiosk touch & selection fix active!');
+// Force button click on release
+window.addEventListener('touchend', e => {
+  if (activeTarget) {
+    e.preventDefault();
+    activeTarget.click();
+    activeTarget = null;
+  }
+}, { capture: true, passive: false });
