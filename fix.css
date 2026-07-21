@@ -1,4 +1,6 @@
-html, body, #redrover-kiosk, * {
-  touch-action: manipulation !important;
-  overscroll-behavior: none !important;
+*, *::before, *::after {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  touch-action: none !important;
 }
